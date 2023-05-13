@@ -10,7 +10,7 @@
 
 # production
 /build
-/accountid_12399_public_key.pem
+accountid_12399_public_key.pem
 # misc
 .DS_Store
 .env.local
