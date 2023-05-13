@@ -5,12 +5,12 @@ import {TiPlusOutline} from "react-icons/ti";
 import {IoIosArrowDown} from "react-icons/io";
 import ModelBox from "../../../ecommerce_frontend/src/Components/ModelBox";
 import Login from "../Pages/Common/Login";
-
-
+import SignUp from "../Pages/Common/SignUp";
 
 const MainHeader = () => {
   const [toggle, setToggle] = useState(false);
   const [model, setModel] = useState(false);
+  const [isLogin, setIsLogin] = useState(false);
   
  console.log(model,"model")
   return (
@@ -63,8 +63,13 @@ const MainHeader = () => {
         <div className="header-more">More<IoIosArrowDown className="header-more-arrow"/></div>
    {model && 
    <ModelBox>
+    {isLogin &&
+<SignUp setIsLogin={setIsLogin} />
+|| 
+<Login setIsLogin={setIsLogin} /> 
 
-<Login />
+    }
+
     </ModelBox>}
     </div>
   );

@@ -47,6 +47,8 @@ const makeRequest = async () => {
     }).then((res) => {
       // BankVerification(res)
       UPIVerification(res)
+      // IFSCVerification(res)
+      // DirectTransfer(res)
       console.log(res,"resresresre")
       return res
       })
@@ -82,13 +84,11 @@ const BankVerification = async (resdata) => {
 
 const UPIVerification = async (resdata) => {
   const data = {
-    bankAccount:"026291800001191",
-    ifsc:"YESB0000262"
+    vpa:"9098341017@apl",
   }
-
   const options = {
     method: 'GET',
-    url: `https://payout-api.cashfree.com/payout/v1.2/validation/bankDetails?bankAccount=${data.bankAccount}&ifsc=${data.ifsc}`,
+    url: `https://payout-api.cashfree.com/payout/v1/validation/upiDetails?vpa=${data.vpa}`,
     headers: {accept: 'application/json',Authorization:'Bearer '+resdata.data.data.token},
   };
  
@@ -102,4 +102,50 @@ const UPIVerification = async (resdata) => {
     });
 }
 
+const IFSCVerification = async (resdata) => {
+  const data = {
+    ifsc:"YESB0000262",
+  }
+  const options = {
+    method: 'GET',
+    url: `https://payout-api.cashfree.com/payout/v1/ifsc/${data.ifsc}`,
+    headers: {accept: 'application/json',Authorization:'Bearer '+resdata.data.data.token},
+  };
+ 
+  await axios
+    .request(options)
+    .then(function (response) {
+      console.log(response.data);
+    })
+    .catch(function (error) {
+      console.error(error);
+    });
+}
 
+const DirectTransfer = async (resdata) => {
+  const data = {
+    amount:"",
+    transferId:"",
+    transferMode:"",
+    beneDetails:{
+      name:"",
+      phone:"",
+      email:"",
+      address1:""
+    }
+  }
+  const options = {
+    method: 'GET',
+    url: `https://payout-api.cashfree.com/payout/v1/ifsc/${data.ifsc}`,
+    headers: {accept: 'application/json',Authorization:'Bearer '+resdata.data.data.token},
+  };
+ 
+  await axios
+    .request(options)
+    .then(function (response) {
+      console.log(response.data);
+    })
+    .catch(function (error) {
+      console.error(error);
+    });
+}

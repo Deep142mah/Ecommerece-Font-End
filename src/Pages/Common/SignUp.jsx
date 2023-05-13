@@ -3,8 +3,7 @@ import loginImg from "../../Assets/Images/desktop.png";
 import TextField from "@mui/material/TextField";
 import { Button } from "@mui/material";
 import { useState } from "react";
-
-const Login = ({setIsLogin}) => {
+const SignUp = ({setIsLogin}) => {
   const [state, setState] = useState(true);
   const handleClick = () => {
     setState(false);
@@ -14,10 +13,11 @@ const Login = ({setIsLogin}) => {
     <div className="login">
       <div className="col-sm-5 login-left">
         {/* <h4>Login<h4/> */}
-        <h2 className="login-left-heading">Login</h2>
+        <h2 className="login-left-heading"> Looks like you're <br />
+          new here!</h2>
         <p className="login-left-text">
-          Get Access to your <br />
-          Orders, Wishlist and Recommendations
+          Sign Up with your mobile<br/>number to get started <br />
+          new here!
         </p>
         <img className="login-left-img" src={loginImg} alt="" />
       </div>
@@ -76,7 +76,7 @@ const Login = ({setIsLogin}) => {
         </Button>
         <div>
           <p
-            onClick={() => setIsLogin(true)}
+            onClick={() => setIsLogin(false)}
             style={{
               color: "#2874f0",
               fontWeight: "550",
@@ -94,4 +94,4 @@ const Login = ({setIsLogin}) => {
   );
 };
 
-export default Login;
+export default SignUp;

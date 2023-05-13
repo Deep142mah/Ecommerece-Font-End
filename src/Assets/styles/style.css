@@ -233,7 +233,7 @@ a {
   /* background: red; */
   border: 1px solid red;
   height: 65vh;
-  width: 40%;
+  width: 42%;
 
 }
 
@@ -268,4 +268,18 @@ a {
  .login-right {
   background:#ebf1f5;
   height:100% ;
+  padding-bottom: 60%;
 }
+
+.login-Input-1 {
+ padding-left: 8%;
+ padding-top: 8%;
+ padding-bottom: 50%;
+ 
+  height:90% ;
+}
+
+.login-button {
+  margin-left: 12%;
+
+ }
