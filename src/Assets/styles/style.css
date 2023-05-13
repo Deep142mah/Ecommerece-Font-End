@@ -1,0 +1,271 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  overflow-x: hidden;
+  font-family: "Roboto", sans-serif;
+}
+a {
+  text-decoration: none;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+::placeholder {
+  color: white;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+.header {
+  background-color: #2874f0;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.h1 {
+  color: aliceblue;
+  padding-top: 20px;
+  font-size: 30px;
+  width: fit-content;
+  margin: 0px 0px 0px 50px;
+  font-family: "Lobster", cursive;
+  /* border:1px solid red;   */
+}
+
+.text {
+  color: aliceblue;
+  font-size: 13px;
+  padding-bottom: 20px;
+  width: fit-content;
+  margin: 0px 0px 0px 0px;
+  font-family: "Times New Roman", Times, serif;
+}
+.text:hover {
+  text-decoration: underline;
+  border-bottom: 2px solid white;
+}
+
+.blue_text {
+  color: #ffe500;
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 7px;
+  position: relative;
+}
+
+.search button {
+  background-color: #0074d9;
+  color: #f2f2f2;
+  float: right;
+  padding: 5px 10px;
+  margin-right: 16px;
+  font-size: 12px;
+  border: none;
+  cursor: pointer;
+}
+
+.search input {
+  height: 40px;
+  width: 550px;
+}
+
+.header-icon {
+  display: flex;
+  font-size: 20px;
+  color: #0074d9;
+  position: absolute;
+  margin-left: 500px;
+}
+
+.header-button {
+  margin-left: 50px;
+  width: 130px;
+  height: 38px;
+  font-size: 18px;
+  color: #2874f0;
+}
+
+.header-button2 {
+  width: 200px;
+  height: 38px;
+  font-size: 18px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.drop-down {
+  position: relative;
+  background: transparent;
+  width: 250px;
+  height: 370px;
+  position: absolute;
+  top: 50px;
+  left: 54%;
+  border-radius: 3px;
+  filter: drop-shadow(0 1px 10px rgba(113, 158, 206, 0.8));
+}
+.dropdownarrow {
+  width: 250px;
+  height: 10px;
+}
+.dropdownarrow:after,
+.dropdownarrow:before {
+  bottom: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: "";
+  height: 10;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.dropdownarrow:after {
+  border-color: rgba(136, 183, 213, 0);
+  border-bottom-color: #ebf1f5;
+  border-width: 12px;
+  margin-left: -12px;
+  margin-bottom: -10px;
+}
+.dropdownarrow:before {
+  border-color: rgba(194, 225, 245, 0);
+  border-bottom-color: #ebf1f5;
+  border-width: 12px;
+  margin-left: -12px;
+  margin-bottom: -10px;
+}
+
+.drop-down-in1 {
+  font-size: 15px;
+  width: 100%;
+  height: 65px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  font-weight: bold;
+  cursor: pointer;
+  border: 1px solid #ebf1f5;
+}
+
+.drop-down-in2 {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+.drop-down-in2 ul {
+  list-style: none;
+  width: 100%;
+  padding-left: 0;
+}
+.drop-down-in2 ul :hover {
+  background-color: whitesmoke;
+}
+.drop-down-in2 ul li {
+  height: 50px;
+  width: 100%;
+  border-top: 0.5px solid rgb(252, 245, 245);
+  border-left: 0px solidrgb(252, 245, 245);
+  border-right: 0px solid rgb(252, 245, 245);
+  border-bottom: 1px solid rgb(252, 245, 245);
+  display: flex;
+  padding: 0 10px;
+  align-items: center;
+}
+
+.header-li :hover {
+  background-color: crimson;
+}
+
+.header-more {
+  width: 200px;
+  height: 38px;
+  font-size: 18px;
+  color: white;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.header-more-arrow {
+  color: white;
+  width: 15px;
+  margin-top: 7px;
+  margin-left: 2px;
+}
+
+.modelBox {
+  position: absolute;
+  background: black;
+  top: 0;
+  opacity: 0.5;
+  height: 100vh;
+  width: 100%;
+}
+
+.loginChildren {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  top: 0;
+  border: 1px solid red;
+  height: 100vh;
+  width: 100%;
+}
+
+.login {
+  /* position: absolute; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background: red; */
+  border: 1px solid red;
+  height: 65vh;
+  width: 40%;
+
+}
+
+.login-left {
+  background: #2874f0;
+  height:100% ;
+}
+
+.login-left-img{
+  margin: 8%;
+  margin-top: 50%;
+  display: flex;
+  justify-content: center;
+ }
+
+ .login-left-heading{
+  padding-left: 10%;
+  padding-top: 14%;
+  color: #ebf1f5;
+  font-weight: 800;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+ }
+
+ .login-left-text{
+  padding-left: 10%;
+  padding-top: 4%;
+  font-size: 120%;
+  color: #ebf1f5;
+  font-weight: 800;
+ }
+
+ .login-right {
+  background:#ebf1f5;
+  height:100% ;
+}
