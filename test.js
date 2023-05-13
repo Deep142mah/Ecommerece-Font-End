@@ -45,7 +45,8 @@ const makeRequest = async () => {
         "X-Client-Secret":clientSecret
       },
     }).then((res) => {
-      newFunc(res)
+      // BankVerification(res)
+      UPIVerification(res)
       console.log(res,"resresresre")
       return res
       })
@@ -57,17 +58,16 @@ const makeRequest = async () => {
 makeRequest();
 
 // console.log(data)
-const newFunc = async (resdata) => {
-  const data = JSON.stringify({
-    bankAccount:"02014457596969",
-    ifsc:"CITI0000001"
-  })
+const BankVerification = async (resdata) => {
+  const data = {
+    bankAccount:"026291800001191",
+    ifsc:"YESB0000262"
+  }
 
   const options = {
     method: 'GET',
-    url: 'https://payout-api.cashfree.com/payout/v1.2/validation/bankDetails',
+    url: `https://payout-api.cashfree.com/payout/v1.2/validation/bankDetails?bankAccount=${data.bankAccount}&ifsc=${data.ifsc}`,
     headers: {accept: 'application/json',Authorization:'Bearer '+resdata.data.data.token},
-    body:data
   };
  
   await axios
@@ -79,4 +79,27 @@ const newFunc = async (resdata) => {
       console.error(error);
     });
 }
+
+const UPIVerification = async (resdata) => {
+  const data = {
+    bankAccount:"026291800001191",
+    ifsc:"YESB0000262"
+  }
+
+  const options = {
+    method: 'GET',
+    url: `https://payout-api.cashfree.com/payout/v1.2/validation/bankDetails?bankAccount=${data.bankAccount}&ifsc=${data.ifsc}`,
+    headers: {accept: 'application/json',Authorization:'Bearer '+resdata.data.data.token},
+  };
+ 
+  await axios
+    .request(options)
+    .then(function (response) {
+      console.log(response.data);
+    })
+    .catch(function (error) {
+      console.error(error);
+    });
+}
+
 
