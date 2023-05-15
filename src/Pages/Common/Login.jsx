@@ -4,7 +4,7 @@ import TextField from "@mui/material/TextField";
 import { Button } from "@mui/material";
 import { useState } from "react";
 
-const Login = ({setIsLogin}) => {
+const Login = ({setModelToggle}) => {
   const [state, setState] = useState(true);
   const handleClick = () => {
     setState(false);
@@ -29,7 +29,7 @@ const Login = ({setIsLogin}) => {
             size="small"
             style={{ width: "92%" }}
             id="standard-basic"
-            label="Enter Email/Mobile number"
+            label="Email/Mobile number"
             variant="standard"
           />
           <TextField
@@ -37,7 +37,7 @@ const Login = ({setIsLogin}) => {
             size="small"
             style={{ width: "92%" }}
             id="standard-basic"
-            label="Enter Your Password"
+            label="Your Password"
             variant="standard"
           />
         </div>
@@ -76,13 +76,13 @@ const Login = ({setIsLogin}) => {
         </Button>
         <div>
           <p
-            onClick={() => setIsLogin(true)}
+            onClick={() => setModelToggle('register')}
             style={{
               color: "#2874f0",
               fontWeight: "550",
               textAlign: "center",
               fontSize: "15px",
-              marginTop: "40%",
+              marginTop: "30%",
               cursor: "pointer",
             }}
           >
